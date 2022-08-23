@@ -1,16 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
+import './App.css';
+import { Amplify } from 'aws-amplify';
+import { withAuthenticator, Button } from '@aws-amplify/ui-react';
+import Job from './components/screens/Job';
 import '@aws-amplify/ui-react/styles.css';
-import { withAuthenticator, Button, Heading, Image, View, Card } from '@aws-amplify/ui-react';
+import config from './aws-exports';
+Amplify.configure(config);
 
 function App({ signOut }) {
   return (
-    <View className="App">
-      <Card>
-        <Image src={logo} className="App-logo" alt="logo" />
-        <Heading level={1}>We now have Auth!!</Heading>
-      </Card>
-      <Button onClick={signOut}>Sign Out</Button>
-    </View>
+    <div className="App">
+      <h1>
+        Trade for a Tradie
+        <Button style={{ float: 'right' }} onClick={signOut}>
+          Sign Out
+        </Button>
+      </h1>
+
+      <Job />
+    </div>
   );
 }
 

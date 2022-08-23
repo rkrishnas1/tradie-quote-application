@@ -1,0 +1,10 @@
+{
+  "resourceName": "TradieDatabase",
+  "tableName": "TradieTable",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
